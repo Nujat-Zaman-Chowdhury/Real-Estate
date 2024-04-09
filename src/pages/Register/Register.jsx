@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
     const [showPassword , setShowPassword] = useState(false)
     const [error,setError] = useState('');
-    const {createUser} = useContext(AuthContext)
+    const {createUser,updateUserProfile} = useContext(AuthContext)
  
 
     const {
@@ -40,8 +40,7 @@ const Register = () => {
         setError("")
         createUser(email,password)
         .then(result=>{
-            // updateUser(name,photo)
-            // .then(() => navigate(location.state || '/'))
+          updateUserProfile(name,photo)
             return toast.success("Successfully Registered")
             
             
