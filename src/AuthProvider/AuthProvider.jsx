@@ -1,11 +1,16 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
-import { createContext, useEffect, useState } from "react";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { createContext,  useEffect,  useState } from "react";
 import auth from "../firebase/firebase.config";
 
+
 export const AuthContext = createContext(null)
+const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
+
 
 const AuthProvider = ({children}) => {
     const [user,setUser] = useState(null);
+   
 
     //create user
     const createUser = (email,password)=>{
@@ -15,26 +20,53 @@ const AuthProvider = ({children}) => {
     //signin user
 
     const signInUser = (email,password)=>{
+       
        return signInWithEmailAndPassword(auth,email,password)
     }
 
-    //observer
+    //googlelogin
+    const googleLogin = ()=>{
+
+      return signInWithPopup(auth, googleProvider)
+    }
+
+    //githublogin
+
+    const githubLogin = ()=>{
+      
+      return signInWithPopup(auth,githubProvider)
+    }
+
+    //sign out
+    const logOut = ()=>{
+      return signOut(auth)
+    }
+
     useEffect(()=>{
-        const unSubscribe = onAuthStateChanged(auth, (currentUser)=> {
-            if (currentUser) {
-              setUser(currentUser)
-            } 
-            else {
-              setUser(null)
-            }
-          });
-          return ()=> unSubscribe();
+      const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+        if (currentUser) {
+          setUser(currentUser)
+        } else {
+          setUser(null)
+        }
+      });
+      return ()=>{
+        unSubscribe();
+      }
     },[])
+    
+
+   
 
     const authInfo = {
         user,
         createUser,
-        signInUser
+        signInUser,
+        googleLogin,
+        githubLogin,
+        logOut
+        
+        
     }
     return (
         <AuthContext.Provider value={authInfo}>

@@ -1,16 +1,24 @@
+
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
-
 const Navbar = () => {
-    const {user}= useContext(AuthContext)
-    console.log(user);
+  const {user,logOut} = useContext(AuthContext)
+    
+   
     const navLinks = <>
     <li><Link>Home</Link></li>
-    <li><Link>Update Profile</Link></li>
-    <li><Link>User Profile</Link></li>
+    {
+      user && <li><Link to="/update-profile">Update Profile</Link></li>
+    }
+    {/* <li><Link>User Profile</Link></li> */}
     </>
+
+    const handleLogOut = ()=>{
+      logOut();
+    }
+
     return (
         <div className="font-roboto my-3">
             <div className="navbar ">
@@ -31,23 +39,18 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    {
+
+     {
       user?
       <div className="flex items-center gap-3">
-        <Link to="/login"><button className="btn bg-[#647295] text-white">Sign out</button></Link>
-        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-        <div className="w-12 rounded-full">
-          <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-        </div>
+        <button onClick={handleLogOut} className="btn">Sign Out</button>
+        <img className="w-10 rounded-full" src={user?.photoURL || 'no image'} alt="" />
       </div>
-      
-    </div>
-    :
-
+      :
       <div>
-        <button className="btn bg-[#647295] text-white">Login</button>
+        <Link to="/login" className="btn">Log In</Link>
       </div>
-    }
+     } 
     
   </div>
 </div>

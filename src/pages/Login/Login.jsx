@@ -1,15 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form"
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
     const [showPassword , setShowPassword] = useState(false)
-    const {signInUser}= useContext(AuthContext)
-
+    const {signInUser,googleLogin,githubLogin}= useContext(AuthContext)
+    const [loginError,setLoginError] = useState('');
+    console.log(location);
     const {
         register,
         handleSubmit,
@@ -20,15 +23,36 @@ const Login = () => {
         const {email,password} = data;
         console.log(email,password);
 
+        
         signInUser(email,password)
         .then(result=>{
+            
             console.log(result.user)
+            return toast.success("Successfully Logged in")
         })
         .catch(error=>{
-            console.log(error)
+          const errorMessage = error;
+          console.log(errorMessage.message.split("/")[1].replace(/[()]/g, ''))
+            setLoginError(errorMessage.message.split("/")[1].replace(/[()]/g, ''))
+            return toast.error(loginError)
         })
         
       }
+
+      const handleSocialLogin = (socialProvider)=>{
+        socialProvider()
+        .then(result=>{
+          
+          return toast.success("Successfully logged in")
+          
+        })
+        .catch(error=>{
+          console.log(error)
+        })
+      }
+
+    
+
     return (
         <div className="hero w-1/3 mx-auto">
   <div className=" w-full flex-col lg:flex-row-reverse">
@@ -36,7 +60,6 @@ const Login = () => {
     <div className="card shrink-0 py-4 shadow-lg bg-base-100">
     <div className="text-center">
       <h1 className="text-5xl font-bold mb-3 ">Login now!</h1>
-    
     </div>
       <form className="card-body pb-0" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control">
@@ -57,10 +80,10 @@ const Login = () => {
           type={showPassword? "text" : "password"} 
           {...register("password", { required: true })}
           placeholder="password"  />
-          {errors.password && <span className="text-red-500 py-2">This field is required</span>}
           <span onClick={()=>setShowPassword(!showPassword)} className="cursor-pointer">
             {showPassword? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}</span>
           </div>
+          {errors.password && <span className="text-red-500 py-2">This field is required</span>}
           <label className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
@@ -76,8 +99,8 @@ const Login = () => {
         <div className="px-8">
         <div className="divider divider-default">OR</div>
         <div className="flex flex-col gap-4 justify-center items-center mt-2">
-        <button className="btn btn-outline w-full"><FaGoogle />Login with Google</button>
-        <button className="btn btn-outline w-full"><FaGithub />Login with Github</button>
+        <button onClick={()=>handleSocialLogin(googleLogin)} className="btn btn-outline w-full"><FaGoogle />Login with Google</button>
+        <button onClick={()=>handleSocialLogin(githubLogin)} className="btn btn-outline w-full"><FaGithub />Login with Github</button>
         </div>
         </div>
         <p className="text-sm text-center dark:text-gray-600 mt-3">Do not have account?
@@ -86,6 +109,7 @@ const Login = () => {
     </div>
     
   </div>
+ 
 </div>
     );
 };
