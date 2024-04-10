@@ -51,7 +51,7 @@ const Register = () => {
       
 
     return (
-        <div className="hero w-1/3 mx-auto">
+        <div className="hero w-full md:w-1/3 mx-auto">
         <div className=" w-full flex-col lg:flex-row-reverse">
          
           <div className="card shrink-0 py-4 shadow-lg bg-base-100">

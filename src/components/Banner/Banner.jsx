@@ -2,7 +2,7 @@
 
 const Banner = () => {
     return (
-        <div className="carousel w-full mx-auto h-[95vh] rounded-lg">
+        <div className="carousel w-full mx-auto h-full md:h-[95vh] rounded-lg">
         <div id="slide1" className="carousel-item relative w-full">
         {/* <div className="bg-gradient-to-b from-transparent to-black absolute inset-0"></div> */}
           <img src="/src/assets/slider2.avif" className="w-full object-cover" />

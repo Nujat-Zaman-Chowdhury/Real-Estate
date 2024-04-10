@@ -5,12 +5,12 @@ import ShowEstates from "../../components/ShowEstates/ShowEstates";
 
 
 const Home = () => {
-    const allData = useLoaderData();
+    
     // console.log(allData);
     return (
         <div>
             <Banner></Banner>
-            <ShowEstates name={'Latest Properties'} allData={allData}></ShowEstates>
+            <ShowEstates></ShowEstates>
         </div>
     );
 };

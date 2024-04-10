@@ -17,7 +17,7 @@ export const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>,
-                loader: ()=> fetch('data.json')
+                
             },
             {
                 path:'/update-profile',
@@ -34,7 +34,7 @@ export const router = createBrowserRouter([
             {
                 path:'/estate/:id',
                 element:<EstatesDetails></EstatesDetails>,
-                loader:()=>fetch('/data.json')
+                loader:()=>fetch('./data.json')
             }
             
 

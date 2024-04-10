@@ -15,8 +15,8 @@ const EstatesDetails = () => {
 
     return (
         <div className="flex flex-col">
-        <div className='flex gap-6 h-[500px]'>
-            <img src={image} alt="Album" className='w-[60%] object-cover'/>
+        <div className='flex flex-col md:flex-row lg:flex-row gap-6 md:h-[500px]'>
+            <img src={image} alt="Album" className='w-full md:w-[60%] object-cover rounded-md'/>
             <div className=''>
                 <h4 className="card-title  text-4xl font-eb leading-relaxed mb-2">{estate_title}</h4>
                 <hr className='border border-gray-300' />
@@ -40,7 +40,7 @@ const EstatesDetails = () => {
                 
             </div>
         </div>
-        <div className="card-body">
+        <div className="card-body p-2 md:p-0">
             
             <p className=''><span>Desciption:</span>{description}</p>
             

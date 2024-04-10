@@ -18,7 +18,7 @@ const SingleEstates = ({ data }) => {
 },[])
     return (
         <div className="card  bg-white shadow-xl mt-8" data-aos="fade-right" data-aos-duration="1000">
-      <figure className="relative h-[328px] rounded-md">
+      <figure className="relative h-[200px] md:h-[328px] rounded-md">
         <img className="rounded-md h-full w-[525px] hover:scale-110 transition duration-500 cursor-pointer object-cover"
           src={image}
           alt="Shoes"

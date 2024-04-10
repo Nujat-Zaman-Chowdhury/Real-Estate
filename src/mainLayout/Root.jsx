@@ -4,9 +4,11 @@ import {Outlet}  from "react-router-dom"
 
 const Root = () => {
     return (
-        <div className="max-w-7xl mx-auto">
+        <div  className="w-full p-2 md:max-w-7xl mx-auto">
+            <div>
             <Navbar></Navbar>
             <Outlet></Outlet>
+        </div>
             <Footer></Footer>
         </div>
     );
