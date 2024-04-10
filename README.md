@@ -4,10 +4,7 @@ Live site:
 
 - [LuxuryLair]()
 
-Resourses
+Resources
 
-- [React Router Dom](https://reactrouter.com/en/main)
-- [Tailwindcss Buttons](https://devdojo.com/tailwindcss/buttons)
-- [Animated Gradient Text](https://www.andrealves.dev/blog/how-to-make-an-animated-gradient-text-with-tailwindcss/)
-- [Daisy UI](https://daisyui.com/)
+- [Aos Package](https://www.npmjs.com/package/aos)
 - [React Form Hook](https://react-hook-form.com/)
