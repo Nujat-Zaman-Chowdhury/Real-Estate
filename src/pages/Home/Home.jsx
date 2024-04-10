@@ -1,7 +1,8 @@
-// import AllData from "../../components/AllData/AllData";
+
 import Banner from "../../components/Banner/Banner";
-import {useLoaderData} from "react-router-dom"
+
 import ShowEstates from "../../components/ShowEstates/ShowEstates";
+import ProvidingSection from "../../components/ProvidingSection/ProvidingSection";
 
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <ShowEstates></ShowEstates>
+            <ProvidingSection></ProvidingSection>
         </div>
     );
 };

@@ -8,7 +8,7 @@ const Navbar = () => {
     
    
     const navLinks = <>
-    <li><NavLink to="/">Home</NavLink></li>
+    <li><NavLink to="/" className="bg-transparent">Home</NavLink></li>
     {
       user && <li><NavLink to="/update-profile">Update Profile</NavLink></li>
     }
