@@ -1,65 +1,41 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext,  useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { FaRegUser } from "react-icons/fa6";
 import { CiLink } from "react-icons/ci";
 import { IoCloseOutline } from "react-icons/io5";
-import { onAuthStateChanged } from "firebase/auth";
-import auth from "../../firebase/firebase.config";
+
+
+
 
 
 const UpdateProfile = () => {
     const {user,updateUserProfile} = useContext(AuthContext)
-
+    
     console.log(location);
     const [userName,setUserName] = useState('');
     const [userPhoto,setUserPhoto] = useState('')
-    
+    // console.log(userName);
 
     const handleSubmit = ()=>{
         // console.log(userName);
         updateUserProfile(userName,userPhoto)
-        
-        
+        // updateProfile(auth.currentUser,{
+        //   displayName:userName,
+        //   photoURL:userPhoto,
+        // })
     }
-    
+
+  //  useEffect(()=>{
+  //     updateProfile(auth.currentUser,{
+  //       displayName:userName,
+  //       photoURL:userPhoto,
+  //     })
+      
+  //  },[userName,userPhoto])
+  
 
     return (
     <div>
-    {/* <div className="flex flex-col justify-center max-w-xs p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800 w-1/3 mx-auto">
-	<img src={user?.photoURL} alt="" className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
-	<div className="space-y-4 text-center divide-y dark:divide-gray-300">
-		<div className="my-2 space-y-1">
-			<h2 className="text-xl font-semibold sm:text-2xl">{user?.displayName}</h2>
-			<p className="px-5 text-xs sm:text-base dark:text-gray-600">Front-End developer</p>
-		</div>
-		<div className="flex flex-col justify-center pt-2 space-x-4 align-center">
-			<a  href="#"  className="p-2 rounded-md dark:text-gray-800 hover:dark:text-violet-600">
-				{user?.email}
-			</a>
-			
-        <a
-          onClick={() => document.getElementById("my_modal_2").showModal()}
-          href="#"
-          className="label-text-alt link link-hover flex justify-center items-center"
-        >
-          <button className="btn">Update</button>
-        </a>
-     
-      <dialog id="my_modal_2" className="modal flex flex-col">
-        <div  className="modal-box fle">
-        <label htmlFor="name">Name</label><br />
-        <input className="border-2" type="text" name="name" id="" onChange={(e)=>setUserName(e.target.value)} />
-
-          <button onClick={handleSubmit}>Save</button>
-          
-        </div>
-        <form method="dialog" className="modal-backdrop">
-        <button>close</button>
-        </form>
-      </dialog>
-		</div>
-	</div>
-</div> */}
 
 
        

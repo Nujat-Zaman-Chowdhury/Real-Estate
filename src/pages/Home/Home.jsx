@@ -1,6 +1,7 @@
-import AllData from "../../components/AllData/AllData";
+// import AllData from "../../components/AllData/AllData";
 import Banner from "../../components/Banner/Banner";
 import {useLoaderData} from "react-router-dom"
+import ShowEstates from "../../components/ShowEstates/ShowEstates";
 
 
 const Home = () => {
@@ -9,7 +10,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <AllData name={'Featured Properties'} allData={allData}></AllData>
+            <ShowEstates name={'Latest Properties'} allData={allData}></ShowEstates>
         </div>
     );
 };

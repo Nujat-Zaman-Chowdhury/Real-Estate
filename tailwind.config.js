@@ -38,6 +38,7 @@ export default withMT({
       fontFamily: {
                 roboto:["Roboto", "sans-serif"],
                 playFair:["Playfair Display", "serif"],
+                eb:["EB Garamond", "serif"]
       }
     },
   },

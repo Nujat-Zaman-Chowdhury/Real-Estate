@@ -1,7 +1,7 @@
 import { Link,useNavigate,useLocation} from "react-router-dom";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form"
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { toast } from 'react-toastify';
