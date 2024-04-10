@@ -31,7 +31,7 @@ const Navbar = () => {
         {navLinks}
       </ul>
     </div>
-    <Link to="/" className="btn btn-ghost  text-[#9F496E] text-bold gap-0 text-2xl font-bold bg-gradient-to-r from-pink-500 via-blue-500 to-blue-700 text-transparent bg-clip-text animate-gradient bg-300%">LuxuryLair</Link>
+    <Link to="/" className="btn btn-ghost  text-[#9F496E] text-bold gap-0 text-3xl font-bold bg-gradient-to-r from-pink-500 via-blue-500 to-[#647295] text-transparent bg-clip-text animate-gradient bg-300%">LuxuryLair</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 text-base">
@@ -43,12 +43,12 @@ const Navbar = () => {
      {
       user?
       <div className="flex items-center gap-3">
-        <button onClick={handleLogOut} className="btn">Sign Out</button>
+        <button onClick={handleLogOut} className="btn bg-[#647295] text-white">Sign Out</button>
         <img className="w-10 rounded-full" src={user?.photoURL || 'no image'} alt="" />
       </div>
       :
       <div>
-        <Link to="/login" className="btn">Log In</Link>
+        <Link to="/login" className="btn bg-[#647295] text-white">Log In</Link>
       </div>
      } 
     

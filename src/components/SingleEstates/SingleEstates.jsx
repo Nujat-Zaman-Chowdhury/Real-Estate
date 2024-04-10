@@ -23,7 +23,7 @@ const SingleEstates = ({ data }) => {
           src={image}
           alt="Shoes"
         />
-        <button className="btn-md absolute top-4 right-4 text-white bg-[#B784B7] rounded-lg">{status}</button>
+        <button className="btn-md absolute top-4 right-4 text-white bg-[#647295] rounded-lg">{status}</button>
       </figure>
       <div className="p-4">
         <h4 className="card-title font-roboto text-neutral-800 mb-2 text-xl font-medium">{estate_title}</h4>
@@ -35,7 +35,7 @@ const SingleEstates = ({ data }) => {
           <span className="flex items-center gap-2 text-base"><BsArrowsFullscreen /> {parking}</span>
         </div>
         <div className="mt-4 text-center">
-          <Link to={`/estate/${id}`} className="btn bg-purple-300 w-full text-white font-roboto">View Property</Link>
+          <Link to={`/estate/${id}`} className="btn bg-[#647295] w-full text-white font-roboto">View Property</Link>
         </div>
       </div>
     </div>
