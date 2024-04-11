@@ -20,8 +20,8 @@ const Navbar = () => {
     }
 
     return (
-        <div className="font-roboto my-3">
-            <div className="navbar ">
+        <div className="font-roboto container mx-auto">
+            <div className="navbar m-0 p-0">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden pl-0 p-0">
@@ -31,7 +31,7 @@ const Navbar = () => {
         {navLinks}
       </ul>
     </div>
-    <Link to="/" className="btn btn-ghost  text-[#9F496E] text-bold gap-0 text-2xl md:text-3xl font-bold bg-gradient-to-r from-pink-500 via-blue-500 to-[#647295] text-transparent bg-clip-text animate-gradient bg-300%">LuxuryLair</Link>
+    <Link to="/" className="btn btn-ghost font-playfair  text-[#647295] font-bold gap-0 text-4xl md:text-3xl font-bold ">LuxuryLair</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 text-base">

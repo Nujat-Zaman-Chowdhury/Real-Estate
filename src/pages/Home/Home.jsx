@@ -9,10 +9,12 @@ const Home = () => {
     
     // console.log(allData);
     return (
-        <div>
+        <div >
             <Banner></Banner>
+            <div className="w-full p-2 md:max-w-7xl mx-auto">
             <ShowEstates></ShowEstates>
             <ProvidingSection></ProvidingSection>
+            </div>
         </div>
     );
 };

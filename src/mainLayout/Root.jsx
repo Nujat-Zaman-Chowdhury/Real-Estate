@@ -5,8 +5,8 @@ import {Outlet}  from "react-router-dom"
 const Root = () => {
     return (
         <div>
-            <div className="w-full p-2 md:max-w-7xl mx-auto">
             <Navbar></Navbar>
+            <div className="">
             <Outlet></Outlet>
             </div>
             <Footer></Footer>
@@ -15,3 +15,5 @@ const Root = () => {
 };
 
 export default Root;
+
+// className="w-full p-2 md:max-w-7xl mx-auto"
