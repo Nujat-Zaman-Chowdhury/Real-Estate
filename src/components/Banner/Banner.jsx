@@ -2,7 +2,7 @@
 
 const Banner = () => {
     return (
-       <div className="bg-[linear-gradient(to_right_bottom,rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url('bg3.avif')] h-[100vh] bg-cover bg-no-repeat bg-center  flex items-center">
+       <div className="bg-[linear-gradient(to_right_bottom,rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url('bg3.avif')] h-full py-28 bg-cover bg-no-repeat bg-center  flex items-center">
         <div className="flex justify-center items-center gap-10 w-full px-8">
         <div className="w-[600px] text-white font-bold flex flex-col justify-center items-center">
           <h2 className="text-6xl font-playfair leading-tight">Experience Unparalleled Luxury with <span className="text-[#647295]">LuxuryLair</span></h2>

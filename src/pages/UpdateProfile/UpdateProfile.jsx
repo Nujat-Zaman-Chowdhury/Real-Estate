@@ -3,13 +3,15 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { FaRegUser } from "react-icons/fa6";
 import { CiLink } from "react-icons/ci";
 import { IoCloseOutline } from "react-icons/io5";
-
-
-
-
+import { Helmet } from "react-helmet";
 
 const UpdateProfile = () => {
-    const {user,updateUserProfile} = useContext(AuthContext)
+  <Helmet>
+  <meta charSet="utf-8" />
+  <title>My Title</title>
+  <link rel="canonical" href="/update-profile" />
+</Helmet>
+    const {user,updateUserProfile,setLoading} = useContext(AuthContext)
     
     console.log(location);
     const [userName,setUserName] = useState('');
@@ -17,8 +19,11 @@ const UpdateProfile = () => {
     // console.log(userName);
 
     const handleSubmit = ()=>{
-        // console.log(userName);
+        // setLoading(true)
+        // setLoading(false);
+        console.log(userName);
         updateUserProfile(userName,userPhoto)
+
         // updateProfile(auth.currentUser,{
         //   displayName:userName,
         //   photoURL:userPhoto,
@@ -39,7 +44,7 @@ const UpdateProfile = () => {
 
 
        
-<div className="w-full md:w-1/3 mx-auto">
+<div className="w-full md:w-1/3 mx-auto py-3">
     
 <div className="p-6 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900">
     <h2 className="text-center mb-3">Your profile</h2>

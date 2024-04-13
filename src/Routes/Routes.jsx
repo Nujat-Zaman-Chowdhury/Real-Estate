@@ -7,6 +7,7 @@ import Register from "../pages/Register/Register";
 import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 import ProtectedRoute from "./ProtectedRoute";
 import EstatesDetails from "../components/EstatesDetails/EstatesDetails";
+import Agents from "../components/Agents/Agents";
 
 export const router = createBrowserRouter([
     {
@@ -20,8 +21,20 @@ export const router = createBrowserRouter([
                 
             },
             {
+                path:'/agents',
+                element:<Agents></Agents>,
+                loader:()=>fetch('agents.json')
+                
+            },
+            {
                 path:'/update-profile',
                 element:<ProtectedRoute><UpdateProfile></UpdateProfile></ProtectedRoute>
+            },
+            {
+                path:'/agents',
+                element:
+                    <Agents></Agents>
+                   
             },
             {
                 path:'/login',
@@ -33,8 +46,8 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/estate/:id',
-                element:<EstatesDetails></EstatesDetails>,
-                loader:()=>fetch('./data.json')
+                element:<ProtectedRoute><EstatesDetails></EstatesDetails></ProtectedRoute>,
+                loader:()=>fetch('/data.json')
             }
             
 

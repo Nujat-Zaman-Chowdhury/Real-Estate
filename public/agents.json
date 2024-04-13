@@ -1,0 +1,53 @@
+[
+    {
+      "id": 1,
+      "agent_name": "John Smith",
+      "company": "Luxury Estates Realty",
+      "office_number": "+1 (555) 123-4567",
+      "mobile_number": "+1 (555) 987-6543",
+      "email": "john.smith@luxuryestates.com",
+      "image":"https://i.ibb.co/Yy3vmwB/agent1.jpg",
+      "total_listed_properties": 25
+    },
+    {
+      "id": 2,
+      "agent_name": "Emily Johnson",
+      "company": "Premiere Properties",
+      "office_number": "+1 (555) 234-5678",
+      "mobile_number": "+1 (555) 876-5432",
+      "email": "emily.johnson@premiereproperties.com",
+      "image":"https://i.ibb.co/hKKbJMs/agent2.jpg",
+      "total_listed_properties": 18
+    },
+    {
+      "id": 3,
+      "agent_name": "Michael Williams",
+      "company": "Elite Realty Group",
+      "office_number": "+1 (555) 345-6789",
+      "mobile_number": "+1 (555) 765-4321",
+      "email": "michael.williams@eliterealtygroup.com",
+      "image":"https://i.ibb.co/dLZgBG0/agent3.jpg",
+      "total_listed_properties": 30
+    },
+    {
+      "id": 4,
+      "agent_name": "Sophia Brown",
+      "company": "High-End Homes Inc.",
+      "office_number": "+1 (555) 456-7890",
+      "mobile_number": "+1 (555) 654-3210",
+      "email": "sophia.brown@highendhomes.com",
+      "image":"https://i.ibb.co/m0RjNph/agent4.webp",
+      "total_listed_properties": 22
+    },
+    {
+      "id": 5,
+      "agent_name": "David Lee",
+      "company": "Luxe Living Realty",
+      "office_number": "+1 (555) 567-8901",
+      "mobile_number": "+1 (555) 321-0987",
+      "email": "david.lee@luxeliving.com",
+      "image":"https://i.ibb.co/cTm7wFT/agent5.jpg",
+      "total_listed_properties": 27
+    }
+  ]
+  

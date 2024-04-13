@@ -14,8 +14,8 @@ const Login = () => {
     const [loginError,setLoginError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location?.state || '/';
-    console.log(location);
+    const from = location?.state || "/";
+    console.log(from);
     const {
         register,
         handleSubmit,

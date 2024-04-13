@@ -11,7 +11,7 @@ const githubProvider = new GithubAuthProvider();
 const AuthProvider = ({children}) => {
     const [user,setUser] = useState(null);
     const [loading,setLoading] = useState(true);
-    console.log(user);
+    // console.log(user);
 
     //create user
     const createUser = (email,password)=>{
@@ -21,6 +21,7 @@ const AuthProvider = ({children}) => {
 
     //updateProfile
     const updateUserProfile = (name,photo)=>{
+      setLoading(false)
       return updateProfile(auth.currentUser, {
         displayName: name, photoURL: photo
       })
@@ -35,14 +36,14 @@ const AuthProvider = ({children}) => {
 
     //googlelogin
     const googleLogin = ()=>{
-
+      setLoading(true);
       return signInWithPopup(auth, googleProvider)
     }
 
     //githublogin
 
     const githubLogin = ()=>{
-      setLoading(true)
+      setLoading(true);
       return signInWithPopup(auth,githubProvider)
     }
 
@@ -70,6 +71,7 @@ const AuthProvider = ({children}) => {
 
     const authInfo = {
         user,
+        setLoading,
         createUser,
         signInUser,
         googleLogin,

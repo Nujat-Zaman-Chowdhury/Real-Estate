@@ -14,7 +14,7 @@ const EstatesDetails = () => {
     const { estate_title, price, image,description,bedrooms,bathrooms,parking,area,location ,facilities,status} = data;
 
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col max-w-7xl mx-auto py-10">
         <div className='flex flex-col md:flex-row lg:flex-row gap-6 md:h-[500px]'>
             <img src={image} alt="Album" className='w-full md:w-[60%] object-cover rounded-md'/>
             <div className=''>
@@ -42,7 +42,7 @@ const EstatesDetails = () => {
         </div>
         <div className="card-body p-2 md:p-0">
             
-            <p className=''><span>Desciption:</span>{description}</p>
+            <p className='mt-6'><span>Desciption:</span>{description}</p>
             
             <div className="card-actions justify-end">
             <button className="btn btn-[#647295]">{status}</button>
