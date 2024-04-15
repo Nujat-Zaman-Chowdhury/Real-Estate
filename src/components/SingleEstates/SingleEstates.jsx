@@ -9,6 +9,7 @@ import { LuBath } from "react-icons/lu";
 
 import { BsArrowsFullscreen } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const SingleEstates = ({ data }) => {
     const { id, estate_title, price, status, image,description,bedrooms,bathrooms,parking } = data;
@@ -17,7 +18,7 @@ const SingleEstates = ({ data }) => {
     Aos.init();
 },[])
     return (
-        <div className="card  bg-white shadow-sm mt-8 shadow-[#647295]" data-aos="fade-right" data-aos-duration="1000">
+        <div className="card bg-white shadow-sm mt-8 shadow-[#647295]" data-aos="fade-right" data-aos-duration="1000">
       <figure className="p-4 relative h-[200px] md:h-[328px] rounded-md">
         <img className="rounded-md h-full w-full hover:scale-105 transition duration-500 cursor-pointer object-cover"
           src={image}
@@ -43,3 +44,7 @@ const SingleEstates = ({ data }) => {
 };
 
 export default SingleEstates;
+SingleEstates.propTypes = {
+
+  data: PropTypes.object,
+}

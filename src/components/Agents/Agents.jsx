@@ -1,4 +1,4 @@
-import {useLoaderData} from "react-router-dom"
+import {Navigate, useLoaderData, useLocation} from "react-router-dom"
 import { FaPhone } from "react-icons/fa6";
 
 import { MdPhoneIphone } from "react-icons/md";
@@ -14,13 +14,18 @@ import { FaLinkedin } from "react-icons/fa6";
 
 import { AiFillInstagram } from "react-icons/ai";
 import { Helmet } from "react-helmet";
+import { useContext } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 const Agents = () => {
     const agents = useLoaderData();
+    const location = useLocation();
+    const {user}= useContext(AuthContext)
     console.log(agents);
-    return (
-        <div className="w-full md:max-w-7xl mx-auto mt-10 p-3">
+    if(user){
+        return (
+            <div className="w-full md:max-w-7xl mx-auto mt-10 p-3">
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Agents - LuxuryLair</title>
@@ -28,8 +33,8 @@ const Agents = () => {
     </Helmet>
             <h3 className="text-4xl font-roboto text-[#2B262D] font-semibold">Our Agents</h3>
             {
-                agents.map(agent=>(
-                    <div className="p-2 md:p-7 flex flex-col md:flex-row items-center gap-10 my-7 border rounded-lg shadow-lg" key={agent.id}>
+                agents.map((agent,index)=>(
+                    <div className="p-2 md:p-7 flex flex-col md:flex-row items-center gap-10 my-7 border rounded-lg shadow-lg" key={index}>
                         <div>
                             <img className="rounded-md w-[360px] lg:w-[260px] h-[200px] md:h-[360px] lg:h-[230px] object-center object-cover" src={agent.image} alt="" />
                         </div>
@@ -70,7 +75,10 @@ const Agents = () => {
                 ))
             }
         </div>
-    );
+        );
+        
+    }
+    else return <Navigate to="/login" state={location?.pathname || "/"}></Navigate>
 };
 
 export default Agents;

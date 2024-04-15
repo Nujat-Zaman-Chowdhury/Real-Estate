@@ -19,7 +19,7 @@ const ShowEstates = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" >
                 {
-                    allData.map(data=><SingleEstates key={data.id} data={data}></SingleEstates>)
+                    allData.map((data,index)=><SingleEstates key={index} data={data}></SingleEstates>)
                 }
             </div>
         </div>
