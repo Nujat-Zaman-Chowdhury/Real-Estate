@@ -6,9 +6,12 @@ import { useForm } from "react-hook-form"
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet";
+
 
 
 const Login = () => {
+  
     const [showPassword , setShowPassword] = useState(false)
     const {signInUser,googleLogin,githubLogin}= useContext(AuthContext)
     const [loginError,setLoginError] = useState('');
@@ -61,7 +64,13 @@ const Login = () => {
     
 
     return (
-        <div className="hero w-full md:w-1/3 mx-auto">
+      
+        <div className="hero w-full md:w-1/3 mx-auto my-5">
+          <Helmet>
+                <meta charSet="utf-8" />
+                <title>Login - LuxuryLair</title>
+                <link rel="canonical" href="http://mysite.com//" />
+    </Helmet>
   <div className=" w-full flex-col lg:flex-row-reverse">
    
     <div className="card shrink-0 py-4 shadow-lg bg-base-100">

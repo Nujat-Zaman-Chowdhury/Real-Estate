@@ -20,3 +20,10 @@
       background-position: 0% 50%;
     }
   }
+
+
+.leaflet-container{
+  height: 70vh;
+  border-radius: 10px;
+  position: relative;
+}

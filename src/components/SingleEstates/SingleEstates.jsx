@@ -17,19 +17,19 @@ const SingleEstates = ({ data }) => {
     Aos.init();
 },[])
     return (
-        <div className="card  bg-white shadow-xl mt-8" data-aos="fade-right" data-aos-duration="1000">
-      <figure className="relative h-[200px] md:h-[328px] rounded-md">
-        <img className="rounded-md h-full w-[525px] hover:scale-110 transition duration-500 cursor-pointer object-cover"
+        <div className="card  bg-white shadow-sm mt-8 shadow-[#647295]" data-aos="fade-right" data-aos-duration="1000">
+      <figure className="p-4 relative h-[200px] md:h-[328px] rounded-md">
+        <img className="rounded-md h-full w-full hover:scale-105 transition duration-500 cursor-pointer object-cover"
           src={image}
-          alt="Shoes"
+          alt=""
         />
-        <button className="btn-md absolute top-4 right-4 text-white bg-[#647295] rounded-lg">{status}</button>
+        <button className="btn border-0 absolute top-6 right-6 text-[#647295] bg-white rounded-lg">{status}</button>
       </figure>
       <div className="p-4">
-        <h4 className="card-title font-roboto text-neutral-800 mb-2 text-xl font-medium">{estate_title}</h4>
-        <p className="flex items-center text-lg mb-4"><BsCurrencyDollar /> {price.split('$')[1]}</p>
-        <p className=" font-eb">{description.slice(0,100)}...</p>
-        <div className="flex items-center gap-4 text-[#5C727D] font-eb my-3">
+        <h4 className="card-title text-[#526491] font-roboto mb-2 text-xl font-semibold">{estate_title}</h4>
+        <p className="flex items-center text-gray-700 text-lg mb-4 font-medium"><BsCurrencyDollar /> {price.split('$')[1]}</p>
+        <p className="font-playfair">{description.slice(0,100)}...</p>
+        <div className="flex items-center gap-4 font-playfair my-3">
           <span className="flex items-center gap-2 text-base"><IoBedOutline />{bedrooms}</span>
           <span className="flex items-center gap-2 text-base"><LuBath />{bathrooms}</span>
           <span className="flex items-center gap-2 text-base"><BsArrowsFullscreen /> {parking}</span>

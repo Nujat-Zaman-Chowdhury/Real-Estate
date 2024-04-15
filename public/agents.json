@@ -15,7 +15,7 @@
       "company": "Premiere Properties",
       "office_number": "+1 (555) 234-5678",
       "mobile_number": "+1 (555) 876-5432",
-      "email": "emily.johnson@premiereproperties.com",
+      "email": "emily.johnson@gmail.com",
       "image":"https://i.ibb.co/hKKbJMs/agent2.jpg",
       "total_listed_properties": 18
     },
@@ -25,7 +25,7 @@
       "company": "Elite Realty Group",
       "office_number": "+1 (555) 345-6789",
       "mobile_number": "+1 (555) 765-4321",
-      "email": "michael.williams@eliterealtygroup.com",
+      "email": "michael.williams@realty.com",
       "image":"https://i.ibb.co/dLZgBG0/agent3.jpg",
       "total_listed_properties": 30
     },
@@ -35,7 +35,7 @@
       "company": "High-End Homes Inc.",
       "office_number": "+1 (555) 456-7890",
       "mobile_number": "+1 (555) 654-3210",
-      "email": "sophia.brown@highendhomes.com",
+      "email": "sophia.brown@homes.com",
       "image":"https://i.ibb.co/m0RjNph/agent4.webp",
       "total_listed_properties": 22
     },

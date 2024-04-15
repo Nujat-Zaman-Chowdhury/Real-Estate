@@ -1,12 +1,20 @@
+import { Helmet } from "react-helmet";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
 import {Outlet}  from "react-router-dom"
 
 const Root = () => {
+    
+    <Helmet>
+        <title>Home</title>
+        <meta name="Home" content="Home" />
+    </Helmet>
+ 
+
     return (
         <div>
+            <div  className="p-3 md:p-0">
             <Navbar></Navbar>
-            <div className="">
             <Outlet></Outlet>
             </div>
             <Footer></Footer>

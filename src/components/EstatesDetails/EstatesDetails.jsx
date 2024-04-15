@@ -45,7 +45,7 @@ const EstatesDetails = () => {
             <p className='mt-6'><span>Desciption:</span>{description}</p>
             
             <div className="card-actions justify-end">
-            <button className="btn btn-[#647295]">{status}</button>
+            <button className="btn bg-[#647295]">{status}</button>
             </div>
         </div>
         </div>

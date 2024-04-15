@@ -37,6 +37,7 @@ export default withMT({
       },
       fontFamily: {
                 roboto:["Roboto", "sans-serif"],
+                dancing:["Dancing Script", "cursive"],
                 playFair:["Playfair Display", "serif"],
                 eb:["EB Garamond", "serif"]
       }
