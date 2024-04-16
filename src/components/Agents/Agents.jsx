@@ -21,11 +21,14 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 const Agents = () => {
     const agents = useLoaderData();
     const location = useLocation();
-    const {user}= useContext(AuthContext)
+    const {user,loading}= useContext(AuthContext)
     console.log(agents);
+    if(loading){
+        return <div className="flex justify-center py-10"><span className="loading loading-spinner text-primary"></span></div>
+    }
     if(user){
         return (
-            <div className="w-full md:max-w-7xl mx-auto mt-10 p-3">
+            <div className="w-full md:max-w-7xl mx-auto mt-10">
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Agents - LuxuryLair</title>
@@ -78,7 +81,10 @@ const Agents = () => {
         );
         
     }
-    else return <Navigate to="/login" state={location?.pathname || "/"}></Navigate>
-};
+    else{ 
+        
+        return <Navigate to="/login" state={location?.pathname || "/"}></Navigate>
+}
+}
 
 export default Agents;

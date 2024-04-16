@@ -25,7 +25,7 @@ const Register = () => {
       } = useForm()
       const onSubmit = (data) => {
         const {email,password,name,photo} = data;
-        console.log(email,password,name,photo);
+        // console.log(email,password,name,photo);
 
         if(password.length<6){
           setError("Password must be 6 characters or above");

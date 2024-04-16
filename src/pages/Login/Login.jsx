@@ -26,8 +26,8 @@ const Login = () => {
         formState: { errors },
       } = useForm()
       const onSubmit = (data) => {
-        const {email,password} = data;
-        console.log(email,password);
+        const {email,password} = data
+        // console.log(email,password);
 
         
         signInUser(email,password)

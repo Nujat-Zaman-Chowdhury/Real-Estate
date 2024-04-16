@@ -14,20 +14,24 @@ const Navbar = () => {
     <>
     <NavLink to="/" className={({isActive})=>(isActive? "text-[#647295] font-bold hover:bg-none bg-white border-[#647295]" : "bg-none text-bold")}>Home</NavLink>
     
-    <NavLink to="/agents" className={({isActive})=>(isActive? "text-[#647295] font-bold  bg-white border-[#647295]" : " bg-white border-none text-black")}>Agents</NavLink>
+  <NavLink to="/agents" className={({isActive})=>(isActive? "text-[#647295] font-bold  bg-white border-[#647295]" : " bg-white border-none text-black")}>Agents</NavLink>
+  
     
     
-    {
-      user && <NavLink to="/update-profile" className={({isActive})=>(isActive? "text-[#647295] font-bold  bg-white border-[#647295]" : " bg-white border-none text-black")}>Update Profile</NavLink>
-    }
+   {
+    user && <NavLink to="/update-profile" className={({isActive})=>(isActive? "text-[#647295] font-bold  bg-white border-[#647295]" : " bg-white border-none text-black")}>Update Profile</NavLink>
+   }
+  
     
     <NavLink to="/contact" className={({isActive})=>(isActive? "text-[#647295] font-bold  bg-white border-[#647295]" : " bg-white border-none text-black")}>Contact</NavLink>
     </>
 
     const handleLogOut = ()=>{
       logOut();
-      console.log("logged out");
+      // console.log("logged out");
+
     }
+    
 
     return (
         <div className="font-roboto  mt-5">
@@ -53,10 +57,10 @@ const Navbar = () => {
      {
       user?
       <div className="flex items-center gap-0 md:gap-4">
-        <button onClick={handleLogOut} className="btn flex items-center bg-[#647295] text-white ">Log Out  <TbLogout /></button>
         <div className="lg:tooltip tooltip-bottom" data-tip={user && user.displayName}>
         <img className="w-10 h-10 object-cover rounded-full  cursor-pointer"  src={user?.photoURL || 'no image'}  alt="" />
         </div>
+        <Link onClick={handleLogOut} className="btn flex items-center bg-[#647295] text-white ">Log Out  <TbLogout /></Link>
       </div>
       :
       <div>

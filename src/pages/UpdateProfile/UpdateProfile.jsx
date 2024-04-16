@@ -6,28 +6,21 @@ import { IoCloseOutline } from "react-icons/io5";
 import { Helmet } from "react-helmet";
 
 const UpdateProfile = () => {
-  <Helmet>
-    <meta charSet="utf-8" />
-    <title>My Title</title>
-    <link rel="canonical" href="/update-profile" />
-  </Helmet>;
-  const { user, updateUserProfile, setLoading } = useContext(AuthContext);
+  
+  const { user, updateUserProfile, setUser} = useContext(AuthContext);
 
-  console.log(location);
+  // console.log(location);
   const [userName, setUserName] = useState("");
   const [userPhoto, setUserPhoto] = useState("");
   // console.log(userName);
 
   const handleSubmit = () => {
-    setLoading(true)
-    // console.log(userName);
-    updateUserProfile(userName, userPhoto);
-    setLoading(false);
+  
+    updateUserProfile(userName,userPhoto)
+    .then(
+      setUser({...user,displayName:userName,photoURL:userPhoto})
+    )
 
-    // updateProfile(auth.currentUser,{
-    //   displayName:userName,
-    //   photoURL:userPhoto,
-    // })
   };
 
   //  useEffect(()=>{
@@ -52,7 +45,7 @@ const UpdateProfile = () => {
           <img
             src={user.photoURL}
             alt=""
-            className="object-cover object-center  mx-auto rounded-md  dark:bg-gray-500"
+            className="object-cover object-center h-[320px] w-full  mx-auto rounded-md  dark:bg-gray-500"
           />
           <div className="mt-6 mb-2 space-y-3 flex flex-col justify-center text-center font-roboto">
             <h2 className="text-xl font-roboto font-semibold tracking-wide">
@@ -78,10 +71,10 @@ const UpdateProfile = () => {
           </div>
         </div>
       </div>
-      <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+      <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle px-2">
         <div className="modal-box">
           <h3 className="font-bold text-lg text-center">Update Your profile</h3>
-          <form className="w-2/3 mx-auto mt-3 space-y-4">
+          <form className="w-full md:w-2/3 mx-auto mt-3 space-y-4">
             <label className="input input-bordered flex items-center gap-2">
               <FaRegUser className="text-gray-500"></FaRegUser>
               <input
