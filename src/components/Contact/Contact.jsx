@@ -1,20 +1,21 @@
 import { Marker, Popup } from 'react-leaflet';
 import { MapContainer } from 'react-leaflet/MapContainer'
 import { TileLayer } from 'react-leaflet/TileLayer'
-import 'Leaflet/dist/leaflet.css'
-// import gpsIcon from "../../assets/gps.png";
+import 'leaflet/dist/leaflet.css'
 import { FaMobile} from 'react-icons/fa';
 import { FaMapLocation } from 'react-icons/fa6';
 import { IoMdMail } from 'react-icons/io';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-// import { Icon } from 'leaflet';
+import L from "leaflet"
+import icon from "leaflet/dist/images/marker-icon.png"
+import iconShadow from "leaflet/dist/images/marker-shadow.png"
 const position = [51.505, -0.08]
 const Contact = () => {
-    // const customIcon = new Icon({
-        
-    //     iconUrl: gpsIcon,
-    //     iconSize: [38, 38] // size of the icon
-    //   });
+    let defaultIcon = L.icon({
+        iconUrl:icon,
+        shadowUrl:iconShadow
+
+    })
     return (
         <div className='max-w-7xl mx-auto rounded-md my-9 p-3'>
             <HelmetProvider>
@@ -24,14 +25,14 @@ const Contact = () => {
                 <link rel="canonical" href="http://mysite.com//" />
     </Helmet>
             </HelmetProvider>
-            <MapContainer class="leaflet-container"  center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
+            <MapContainer className="leaflet-container"  center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
   <TileLayer
     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
   />
-  <Marker position={position}>
+  <Marker position={position} icon={defaultIcon}>
       <Popup>
-      1889 NW 79st St, Asheville, NC 98726
+      <p>1889 NW 79st St, Asheville, NC 98726</p>
       </Popup>
     </Marker>
 </MapContainer>
@@ -61,7 +62,7 @@ const Contact = () => {
             </div>
 			<div className='w-full md:w-[50%]'>
             <label htmlFor="phone" className="block mb-1 ml-1">Phone</label>
-			<input id="name" type="text" placeholder="Your phone number" required="" className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-violet-600 bg-white shadow-lg" />
+			<input id="phone" type="text" placeholder="Your phone number" required="" className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-violet-600 bg-white shadow-lg" />
             </div>
 		</div>
 		<div>
