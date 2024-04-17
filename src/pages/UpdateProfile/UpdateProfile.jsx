@@ -3,7 +3,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { FaRegUser } from "react-icons/fa6";
 import { CiLink } from "react-icons/ci";
 import { IoCloseOutline } from "react-icons/io5";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const UpdateProfile = () => {
   
@@ -14,35 +14,35 @@ const UpdateProfile = () => {
   const [userPhoto, setUserPhoto] = useState("");
   // console.log(userName);
 
+
+
   const handleSubmit = () => {
-  
+    // setLoading(true)
     updateUserProfile(userName,userPhoto)
     .then(
       setUser({...user,displayName:userName,photoURL:userPhoto})
     )
+    // setLoading(false)
 
   };
 
-  //  useEffect(()=>{
-  //     updateProfile(auth.currentUser,{
-  //       displayName:userName,
-  //       photoURL:userPhoto,
-  //     })
-
-  //  },[userName,userPhoto])
+  
 
   return (
     <div>
+      <HelmetProvider>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Update Profile - LuxuryLair</title>
         <link rel="canonical" href="http://mysite.com//" />
       </Helmet>
+      </HelmetProvider>
 
       <div className="w-full  mx-auto py-3 my-10">
-        <div className="p-6 w-full md:w-2/4 lg:w-1/3 mx-auto rounded-md shadow-xl dark:bg-gray-50 dark:text-gray-900">
+        <div className="p-6 w-full md:w-2/4 lg:w-1/3 mx-auto rounded-md shadow-xl bg-white border shadow-neutral-300">
           <h2 className="text-2xl font-roboto text-[#4a5e94] font-semibold text-center mb-4">Your profile</h2>
           <img
+          
             src={user.photoURL}
             alt=""
             className="object-cover object-center h-[320px] w-full  mx-auto rounded-md  dark:bg-gray-500"

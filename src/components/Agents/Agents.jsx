@@ -13,7 +13,7 @@ import { FaTwitter } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 
 import { AiFillInstagram } from "react-icons/ai";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
@@ -29,11 +29,13 @@ const Agents = () => {
     if(user){
         return (
             <div className="w-full md:max-w-7xl mx-auto mt-10">
+            <HelmetProvider>
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Agents - LuxuryLair</title>
                 <link rel="canonical" href="http://mysite.com//" />
-    </Helmet>
+            </Helmet>
+            </HelmetProvider>
             <h3 className="text-4xl font-roboto text-[#2B262D] font-semibold">Our Agents</h3>
             {
                 agents.map((agent,index)=>(

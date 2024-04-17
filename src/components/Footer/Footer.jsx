@@ -2,6 +2,7 @@ import { GiTwirlyFlower } from "react-icons/gi";
 import { GrLocation } from "react-icons/gr";
 import { MdLocalPhone } from "react-icons/md";
 import { TfiEmail } from "react-icons/tfi";
+import { Link } from "react-router-dom";
 
 
 const Footer = () => {
@@ -26,13 +27,10 @@ const Footer = () => {
 				<p className="pb-1 text-lg font-medium">Category</p>
 				<ul>
 					<li>
-						<a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-600">Home</a>
+						<Link to="/" className="hover:dark:text-violet-600">Home</Link>
 					</li>
 					<li>
-						<a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-600">About</a>
-					</li>
-					<li>
-						<a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-600">Contact</a>
+						<Link to="/contact"  className="hover:dark:text-violet-600">Contact</Link>
 					</li>
 					<li>
 						<a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-600">User Profile</a>

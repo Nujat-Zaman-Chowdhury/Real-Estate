@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form"
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const Register = () => {
     const [showPassword , setShowPassword] = useState(false)
@@ -57,11 +57,13 @@ const Register = () => {
 
     return (
         <div className="hero w-full md:w-1/3 mx-auto my-5">
+          <HelmetProvider>
           <Helmet>
                 <meta charSet="utf-8" />
                 <title>Register - LuxuryLair</title>
                 <link rel="canonical" href="http://mysite.com//" />
-    </Helmet>
+          </Helmet>
+          </HelmetProvider>
         <div className=" w-full flex-col lg:flex-row-reverse">
          
           <div className="card shrink-0 py-4 shadow-lg bg-base-100">

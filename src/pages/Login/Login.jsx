@@ -6,15 +6,15 @@ import { useForm } from "react-hook-form"
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 
 
 const Login = () => {
-  
+  const [error,setError] = useState('');
     const [showPassword , setShowPassword] = useState(false)
     const {signInUser,googleLogin,githubLogin}= useContext(AuthContext)
-    const [loginError,setLoginError] = useState('');
+    // const [loginError,setLoginError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
     const from = location?.state || "/";
@@ -38,11 +38,13 @@ const Login = () => {
             console.log(result.user)
             return toast.success("Successfully Logged in")
         })
+
         .catch(error=>{
-          const errorMessage = error;
-          console.log(errorMessage.message.split("/")[1].replace(/[()]/g, ''))
-            setLoginError(errorMessage.message.split("/")[1].replace(/[()]/g, ''))
-            return toast.error(loginError)
+           return setError(error.message.split("/")[1].replace(/[()]/g,''))
+          // const errorMessage = error;
+          // console.log(errorMessage.message.split("/")[1].replace(/[()]/g, ''))
+          //   setLoginError(errorMessage.message.split("/")[1].replace(/[()]/g, ''))
+          //   return toast.error(loginError)
         })
         
       }
@@ -66,11 +68,13 @@ const Login = () => {
     return (
       
         <div className="hero w-full md:w-1/3 mx-auto my-5">
+          <HelmetProvider>
           <Helmet>
                 <meta charSet="utf-8" />
                 <title>Login - LuxuryLair</title>
                 <link rel="canonical" href="http://mysite.com//" />
-    </Helmet>
+          </Helmet>
+          </HelmetProvider>
   <div className=" w-full flex-col lg:flex-row-reverse">
    
     <div className="card shrink-0 py-4 shadow-lg bg-base-100">
@@ -102,7 +106,11 @@ const Login = () => {
           {errors.password && <span className="text-red-500 py-2">This field is required</span>}
           <label className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+
           </label>
+          {
+            error && <small className="text-red-500">{error}</small> 
+          }
         </div>
         
         <div className="form-control">

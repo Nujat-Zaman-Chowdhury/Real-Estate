@@ -9,7 +9,7 @@ import { CiLogin } from "react-icons/ci";
 const Navbar = () => {
   const {user,logOut} = useContext(AuthContext)
     
-   console.log(user);
+  //  console.log(user);
     const navLinks = 
     <>
     <NavLink to="/" className={({isActive})=>(isActive? "text-[#647295] font-bold hover:bg-none bg-white border-[#647295]" : "bg-none text-bold")}>Home</NavLink>
