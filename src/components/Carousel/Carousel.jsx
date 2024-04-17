@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const Carousel = ({children: slides, autoSlide= false, autoSlideInterval = 3000,}) => {
     const [curr, setCurr]= useState(0);
@@ -37,8 +38,8 @@ const Carousel = ({children: slides, autoSlide= false, autoSlideInterval = 3000,
             <div className="absolute bottom-4 right-0 left-0">
                 <div className="flex items-center justify-center gap-2">
                     {
-                        slides.map((_,i,index)=>(
-                            <div key={index} className={`
+                        slides.map((_,i)=>(
+                            <div key={i} className={`
                             transition-all w-3 h-3 bg-white rounded-full ${curr === i? "p-2" : "bg-opacity-50"}
                             `}>
 
@@ -55,3 +56,11 @@ const Carousel = ({children: slides, autoSlide= false, autoSlideInterval = 3000,
 };
 
 export default Carousel;
+
+Carousel.propTypes = {
+
+    children: PropTypes.node,
+    autoSlide: PropTypes.node,
+    autoSlideInterval: PropTypes.node,
+  }
+

@@ -45,7 +45,7 @@ const UpdateProfile = () => {
           
             src={user.photoURL}
             alt=""
-            className="object-cover object-center h-[320px] w-full  mx-auto rounded-md  dark:bg-gray-500"
+            className="object-cover object-center h-[340px] w-full  mx-auto rounded-md  dark:bg-gray-500"
           />
           <div className="mt-6 mb-2 space-y-3 flex flex-col justify-center text-center font-roboto">
             <h2 className="text-xl font-roboto font-semibold tracking-wide">
@@ -54,7 +54,7 @@ const UpdateProfile = () => {
             <p className="dark:text-gray-800 font-roboto">{user?.email}</p>
 
             <a
-              onClick={() => document.getElementById("my_modal_2").showModal()}
+              onClick={() => document.getElementById("my_modal_5").showModal()}
               href="#"
               className="label-text-alt link link-hover flex justify-center items-center"
             >

@@ -18,7 +18,7 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location?.state || "/";
-    console.log(from);
+    // console.log(from);
     const {
         register,
         handleSubmit,
@@ -41,10 +41,7 @@ const Login = () => {
 
         .catch(error=>{
            return setError(error.message.split("/")[1].replace(/[()]/g,''))
-          // const errorMessage = error;
-          // console.log(errorMessage.message.split("/")[1].replace(/[()]/g, ''))
-          //   setLoginError(errorMessage.message.split("/")[1].replace(/[()]/g, ''))
-          //   return toast.error(loginError)
+          
         })
         
       }

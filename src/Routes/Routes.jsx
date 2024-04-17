@@ -23,19 +23,13 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/agents',
-                element:<Agents></Agents>,
+                element:<ProtectedRoute><Agents></Agents></ProtectedRoute>,
                 loader:()=>fetch('agents.json')
                 
             },
             {
                 path:'/update-profile',
                 element:<ProtectedRoute><UpdateProfile></UpdateProfile></ProtectedRoute>
-            },
-            {
-                path:'/agents',
-                element:<ProtectedRoute><Agents></Agents></ProtectedRoute>
-                    
-                   
             },
             {
                 path:'/login',

@@ -9,7 +9,7 @@ const ShowEstates = () => {
         fetch('data.json')
         .then((res) => res.json())
       .then((data) => setAllData(data));
-    })
+    },[])
 
     return (
         <div className="mt-10 lg:mt-20">

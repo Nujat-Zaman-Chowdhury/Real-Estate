@@ -1,4 +1,3 @@
-import {Navigate, useLoaderData, useLocation} from "react-router-dom"
 import { FaPhone } from "react-icons/fa6";
 
 import { MdPhoneIphone } from "react-icons/md";
@@ -14,19 +13,22 @@ import { FaLinkedin } from "react-icons/fa6";
 
 import { AiFillInstagram } from "react-icons/ai";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { useContext } from "react";
-import { AuthContext } from "../../AuthProvider/AuthProvider";
+import {  useEffect, useState } from "react";
+
 
 
 const Agents = () => {
-    const agents = useLoaderData();
-    const location = useLocation();
-    const {user,loading}= useContext(AuthContext)
-    console.log(agents);
-    if(loading){
+    
+    const [agents, setAgents] = useState([])
+    useEffect(()=>{
+        fetch('agents.json')
+        .then(res=>res.json())
+        .then(data=>setAgents(data))
+    },[])
+    if(agents.length === 0){
         return <div className="flex justify-center py-10"><span className="loading loading-spinner text-primary"></span></div>
     }
-    if(user){
+    
         return (
             <div className="w-full md:max-w-7xl mx-auto mt-10">
             <HelmetProvider>
@@ -83,10 +85,6 @@ const Agents = () => {
         );
         
     }
-    else{ 
-        
-        return <Navigate to="/login" state={location?.pathname || "/"}></Navigate>
-}
-}
+
 
 export default Agents;

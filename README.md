@@ -2,7 +2,7 @@
 
 Live site:
 
-- [LuxuryLair](https://assignment-9-real-estate.web.app/)
+- [LuxuryLair](https://assignment-9-real-estate.web.app)
 
 Features and Characteristics
 

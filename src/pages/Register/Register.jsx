@@ -10,7 +10,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 const Register = () => {
     const [showPassword , setShowPassword] = useState(false)
     const [error,setError] = useState('');
-    const {createUser,updateUserProfile} = useContext(AuthContext)
+    const {createUser,updateUserProfile,logOut} = useContext(AuthContext)
     const navigate = useNavigate();
     const location = useLocation();
     
@@ -27,6 +27,7 @@ const Register = () => {
         const {email,password,name,photo} = data;
         // console.log(email,password,name,photo);
 
+
         if(password.length<6){
           setError("Password must be 6 characters or above");
           return
@@ -41,15 +42,23 @@ const Register = () => {
           return
         }
 
+
+
         
         setError("")
         createUser(email,password)
         .then(result=>{
           updateUserProfile(name,photo)
-          .then(()=>navigate(from))
+          .then(()=>{
+            
+            navigate(from)
+            return toast.success("Successfully Registered")
+          })
+        logOut()
+        }
+      )
+      .catch(error=>toast.error(error.code.split('/')[1]))
           
-        })
-        return toast.success("Successfully Registered")
         
         }
 
