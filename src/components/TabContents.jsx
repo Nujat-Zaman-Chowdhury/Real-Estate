@@ -5,6 +5,7 @@ const TabContents = ({ onTabSelect }) => {
     return (
         <Tabs onSelect={(index) => onTabSelect(index)}>
             <TabList >
+                <Tab>All</Tab>
                 <Tab>Sale</Tab>
                 <Tab>Rent</Tab>
             </TabList>

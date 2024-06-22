@@ -6,11 +6,18 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import TrustedBy from "../../components/TrustedBy/TrustedBy";
 import { ScrollRestoration } from "react-router-dom";
 import Hero from "../../components/Hero/Hero";
+import { useEffect, useState } from "react";
+import WelcomeModal from "../../components/WelcomeModal";
 
 
 
 const Home = () => {
-    
+    const [isModalOpen, setIsModalOpen] = useState(true);
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
     
     // console.log(allData);
     return (
@@ -22,6 +29,7 @@ const Home = () => {
                 <link rel="canonical" href="http://mysite.com//" />
             </Helmet>
             </HelmetProvider>
+            <WelcomeModal isModalOpen={isModalOpen} onRequestClose={closeModal}/>
 
             {/* <Banner></Banner> */}
             <Hero></Hero>

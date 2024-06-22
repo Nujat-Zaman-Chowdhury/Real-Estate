@@ -10,6 +10,7 @@ import EstatesDetails from "../components/EstatesDetails/EstatesDetails";
 import Agents from "../components/Agents/Agents";
 import Contact from "../components/Contact/Contact";
 
+
 export const router = createBrowserRouter([
     {
         path:'/',
