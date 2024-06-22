@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
     return (
         <footer className="py-6 bg-[#2B262D] dark:text-white w-full">
-	<div className="container px-6 mx-auto space-y-6 divide-y dark:divide-gray-600 md:space-y-12 divide-opacity-50 text-white">
+		<div className="container px-6 mx-auto space-y-6 divide-y dark:divide-gray-600 md:space-y-12 divide-opacity-50 text-white">
 		<div className="grid grid-cols-12">
 			<div className="pb-6 col-span-full md:pb-0 md:col-span-6">
 				<a rel="noopener noreferrer" href="#" className="flex justify-center md:justify-start">
