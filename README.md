@@ -17,3 +17,9 @@ Resources(npm packages)
 - [Aos Package](https://www.npmjs.com/package/aos)
 - [React Form Hook](https://react-hook-form.com/)
 - [React Leaflet](https://react-leaflet.js.org/)
+
+How to Run it
+- clone it
+- write command npm i in terminal
+- run it by npm run dev
+  
